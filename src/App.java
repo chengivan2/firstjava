@@ -2,18 +2,19 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Scanner name1 = new Scanner(System.in);
-        String name = name1.nextLine();
-        System.out.println("Hello, World!");
-        System.out.println(name);
-        Scanner time1 = new Scanner(System.in);
-        int time = time1.nextInt();
-        if (time > 12) {
-            System.out.println("Morning");
-        }
-        
-        else if (time < 12) {
-            System.out.println("Evening");
-        }
+        Scanner cases = new Scanner(System.in);
+        int cases_num = cases.nextInt();
+        String day = switch(cases_num) {
+            case 1 -> "Monday";
+            case 2 -> "Tuesday";
+            case 3 -> "Wednesday";
+            case 4 -> "Thursday";
+            case 5 -> "Friday";
+            case 6 -> "Saturday";
+            case 7 -> "Sunday";
+            default -> "Invalid day number";
+        };
+
+        System.out.println(day);
     }
 }
